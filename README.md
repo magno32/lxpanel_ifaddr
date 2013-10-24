@@ -12,6 +12,9 @@ I did this on Ubuntu Server 12.04, and have not tested anywhere else.
 Currently (at the time I am adding this) the interface name is hardcoded
 to 'eth0'.
 
+Ubuntu 12.04
+------------
+
 Quick build instructions (once you have the dependencies):
 
 - Install
@@ -21,4 +24,22 @@ Quick build instructions (once you have the dependencies):
  1. sudo make uninstall
 
 The plugin should be accessible from the "Add/Remove Panel Items" option in LXDE
+
+Raspbian
+--------
+
+You need the following packages on Raspbian:
+* libglib2.0-dev
+* libmenu-cache1-dev 
+* libgtk2.0-dev
+
+Command:
+
+`sudo apt-get install libglib2.0-dev libmenu-cache1-dev libgtk2.0-dev`
+
+- Install
+ 1. make all
+ 2. sudo cp ifaddr.so /usr/lib/arm-linux-gnueabihf/lxpanel/plugins
+- Uninstall
+ 1. sudo rm /usr/lib/arm-linux-gnueabihf/lxpanel/plugins/ifaddr.so
 
